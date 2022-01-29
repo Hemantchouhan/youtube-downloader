@@ -38,12 +38,14 @@ exports.createDownladpage = (data) => {
                             <table width='100%' border='1' cellpadding='10' cellspacing='10'>
                                 <thead>
                                     <td>Format</td>
+                                    <td>Extension</td>
                                     <td>Size</td>
                                     <td>Download</td>
                                 </thead>
                                 {{#formats}}
                                 <tr>
                                     <td>{{format}}</td>
+                                    <td>{{ext}}</td>
                                     <td>{{formatBytes filesize}}</td>
                                     <td><a href='{{url}}' target='_blank' download>{{../title}}-{{format_note}}.{{ext}}</a></td>
                                 </tr>
