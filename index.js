@@ -4,7 +4,7 @@ const template = require('./template');
 const requestListener = async function (req, res) {
     res.writeHead(200, { 'content-type': 'text/html' });
     const urlParams = url.parse(req.url, true);
-    if (urlParams.pathname === '/call' && urlParams.query.method === 'download') {
+    if (urlParams.query.method && urlParams.query.method === 'download') {
         const youtubedl = require('youtube-dl-exec');
         const details = await youtubedl(urlParams.query.url, {
             dumpSingleJson: true,
